@@ -42,6 +42,7 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'valid_attribute'
   gem 'quiet_assets'
 end
 
