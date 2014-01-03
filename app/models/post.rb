@@ -13,6 +13,10 @@ class Post < ActiveRecord::Base
 
   mount_uploader :image, PostImageUploader
 
+  def has_meow_from?(user)
+    meows.find_by(user_id: user.id).present?
+  end
+
   class << self
     def by_recency
       order(created_at: :desc)

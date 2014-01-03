@@ -21,4 +21,18 @@ describe Post do
       expect(Post.by_recency).to eq [post2, post3, post1]
     end
   end
+
+  describe "#has_meow_from?" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:post) { FactoryGirl.create(:post) }
+
+    it "returns true if given user has already created a meow for post" do
+      FactoryGirl.create(:meow, user: user, post: post)
+      expect(post).to have_meow_from user
+    end
+
+    it "returns false if given user has not already created a meow for post" do
+      expect(post).to_not have_meow_from user
+    end
+  end
 end
