@@ -6,4 +6,6 @@ class Post < ActiveRecord::Base
   validates_presence_of :image
 
   validates_length_of :description, maximum: 140
+
+  mount_uploader :image, PostImageUploader
 end
