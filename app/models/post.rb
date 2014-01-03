@@ -2,6 +2,10 @@ class Post < ActiveRecord::Base
   belongs_to :user,
     inverse_of: :posts
 
+  has_many :meows,
+    dependent: :destroy,
+    inverse_of: :post
+
   validates_presence_of :user
   validates_presence_of :image
 
