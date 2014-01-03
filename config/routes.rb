@@ -4,9 +4,9 @@ Catstagram::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'posts#index'
 
-  resources :posts, only: [:new, :create]
+  resources :posts, only: [:index, :new, :create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
