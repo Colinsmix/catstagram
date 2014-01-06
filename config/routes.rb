@@ -7,7 +7,7 @@ Catstagram::Application.routes.draw do
   root 'posts#index'
 
   resources :posts, only: [:index, :new, :create] do
-    resources :meows, only: [:create]
+    resources :meows, only: [:create, :destroy]
   end
 
   # Example of regular route:
