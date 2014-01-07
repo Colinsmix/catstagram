@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
   $('[data-post-id]').on('submit', '[data-meow-button="create"]', function(event) {
     event.preventDefault();
 
