@@ -24,8 +24,7 @@ class MeowsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        flash[:notice] = "All evidence of your meowing has been destroyed!"
-        redirect_to :back
+        redirect_to :back, notice: "We heard your Meow!"
       end
 
       format.json { head :no_content }
